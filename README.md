@@ -9,8 +9,6 @@ import folium
 from folium import plugins
 from folium.plugins import MeasureControl
 from selenium import webdriver as wb
-
-
 ass=wb.Chrome()
 from selenium.webdriver.common import action_chains, keys
 br=wb.Chrome()
@@ -26,7 +24,6 @@ action = action_chains.ActionChains(chrome)
 action.send_keys(keys.Keys.F12)
 action.release()
 def newer():
-    
     chrome_options = wb.ChromeOptions()
     chrome_options.add_argument('--no-sandbox')
     chrome = wb.Chrome('chromedriver', chrome_options=chrome_options)
@@ -35,11 +32,8 @@ def newer():
     action = action_chains.ActionChains(chrome)
     action.send_keys(keys.Keys.F12)
     action.release()
-    
-
 import os
-class blockchain(Tk):
-    
+class blockchain(Tk):   
     def __init__(self):
         self.window=tkinter.Tk()
         self.window.geometry('500x400')
@@ -59,11 +53,9 @@ class blockchain(Tk):
         #self.ss=self.m.add_child(MeasureControl(self.abc.location))
         #self.naya ='mapp.html'
         #self.m.save(self.xy)         
-
         self.lis=[]
         self.button() 
         self.window.mainloop()
-
     def Data(self):
         self.tx_id=self.txt_id.get()# getting text id
         self.tx_name=self.txt_name.get()
@@ -79,17 +71,13 @@ class blockchain(Tk):
         self.Key=self.Pre_hash+self.new_hash
         self.lis.append(self.Key)
         print(self.lis)
-        self.pre_hash=self.new_hash
-        
+        self.pre_hash=self.new_hash     
     def Add_map(self):
         #print(self.lis) 
-
         self.chrome_options = wb.ChromeOptions()
         self.chrome_options.add_argument('--no-sandbox')
         self.chrome = wb.Chrome('chromedriver', chrome_options=self.chrome_options)
         self.aa=self.chrome.get('file:///C:/Users/NOOTBOOK/map.html')##copy the map URL i have provided and paste into that
-       
-        
     def Add_location(self):
         self.get_class_element=self.chrome.find_element_by_class_name('leaflet-popup-content')
         self.location= self.get_class_element.text
@@ -97,10 +85,8 @@ class blockchain(Tk):
         self.varr=self.location
         self.lis.append(self.location)
        # file:///C:/Users/NOOTBOOK/map.html
-        self.chrome.close()
-        
-    def button(self):
-                
+        self.chrome.close()     
+    def button(self):        
         self.run=Button(command=self.Data,text="click")
         self.run.grid(column=4,row=8) 
         self.add_map=Button(command=self.Add_map,text='Add_map')
