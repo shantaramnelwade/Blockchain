@@ -1,48 +1,20 @@
 # Blockchain
 # Blockchain using current locations and timings.
-
-
-
-import tkinter 
-from tkinter.ttk import *
-from tkinter import  *
-import time as tm
-import hashlib as hs
-import folium
-from folium import plugins
-from folium.plugins import MeasureControl
-from selenium import webdriver as wb
-ass=wb.Chrome()
-from selenium.webdriver.common import action_chains, keys
-br=wb.Chrome()
-wb.support.abstract_event_listener(br)
-chrome_options = wb.ChromeOptions()
-chrome_options.add_argument('--no-sandbox')
-chrome = wb.Chrome('chromedriver', chrome_options=chrome_options)
-#from selenium.webdriver.common.keys import Keys
-#chrome.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.SHIFT + 'I')
-chrome.get('file:///C:/Users/comp/Desktop/html%20to%20json/map.html')
-chrome.get_log('browser')
-action = action_chains.ActionChains(chrome)
-action.send_keys(keys.Keys.F12)
-action.release()
-
-
-def newer():
-
-    chrome_options = wb.ChromeOptions()
-    chrome_options.add_argument('--no-sandbox')
-    chrome = wb.Chrome('chromedriver', chrome_options=chrome_options)
-    chrome.get('file:///C:/Users/comp/Desktop/html%20to%20json/map.html')
-    chrome.get_log('browser')
-    action = action_chains.ActionChains(chrome)
-    action.send_keys(keys.Keys.F12)
-    action.release()
-    
-import os
 class blockchain(Tk):   
 
     def __init__(self):
+        import tkinter 
+        from tkinter.ttk import *
+        from tkinter import  *
+        import time as tm
+        import hashlib as hs
+        import folium
+        from folium import plugins
+        from folium.plugins import MeasureControl
+        from selenium import webdriver as wb
+        import os
+        ass=wb.Chrome()
+        from selenium.webdriver.common import action_chains, keys
         self.window=tkinter.Tk()
         self.window.geometry('500x400')
         self.window.title("BLOCKCHAIN TRANSACTION") 
@@ -83,6 +55,7 @@ class blockchain(Tk):
         self.pre_hash=self.new_hash     
     def Add_map(self):
         #print(self.lis) 
+        br=wb.Chrome()
         self.chrome_options = wb.ChromeOptions()
         self.chrome_options.add_argument('--no-sandbox')
         self.chrome = wb.Chrome('chromedriver', chrome_options=self.chrome_options)
